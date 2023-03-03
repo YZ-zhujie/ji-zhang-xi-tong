@@ -1,71 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 实例</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- <!-- CSS -->
- <link rel="stylesheet" type="text/css" href="/thinkphp5/public/static/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap-4.6.2-dist/css/style.css"  rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/thinkphp5/public/static/bootstrap-4.6.2-dist/css/bootstrap.min.css">
+    <title>Document</title>
 </head>
 <body>
- <div class="container">
-   <ul class="nav nav-pills">
-     <li class="nav-item">
-       <a class="nav-link active" href="#">Active</a>
-     </li>
-     <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
-       <div class="dropdown-menu">
-         <a class="dropdown-item" href="#">Action</a>
-         <a class="dropdown-item" href="#">Another action</a>
-         <a class="dropdown-item" href="#">Something else here</a>
-         <div class="dropdown-divider"></div>
-         <a class="dropdown-item" href="#">Separated link</a>
-       </div>
-     </li>
-     <li class="nav-item">
-       <a class="nav-link" href="#">Link</a>
-     </li>
-     <li class="nav-item">
-       <a class="nav-link disabled">Disabled</a>
-     </li>
-   </ul>
+    <section class="vh-100" style="background-color: #508bfc;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center ">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong" style="border-radius: 1rem;height: 700px;">
+            <!-- return -->
+                <div class="form-row  mt-ms5">   
+                    <a href="index.html" class="btn btn-primary float-left" style="margin-left: 10px;">返回</a>
+                    
+                </div>
+                <br>   
+                <div class="d-flex align-items-center">
+                    <div class="mx-auto"> 
+                        <h4 >收入管理</h4>
+                    </div>     
+                  </div>  
+                  <br>   
+                <!-- navAndAdd -->
+                  <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline">
+                      <input class="form-control smr-sm-2" style="width:100px" type="search" placeholder="search.."  aria-label="Search" >
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <a href="{:url('income_controller/add')}" class="btn btn-primary float-right">添加</a>
+                </nav>
+                <!-- form -->
+                  <div class="col mt-4">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">序号</th>
+                            <th scope="col">类型</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                        </thead>
+                        {volist name="Income" id="incomes" key="key"}
+                        <tbody>    
+                        <tr>
+                          <td>{$key}</td>
+                            <td>{$incomes->getData('name')}</td>
+                            <td><a type="button" href="edit.html" class="btn btn-primary">编辑</a>
+                                <a type="button" class="btn btn-danger">删除</a></td>
+                            </tr>
+                        </tbody>
+                        {/volist}
 
-    <form>
-      <div class="form-row">
-        <div class="form-group col-md-2">
-          <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </table>
+                    
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form-group col-md-2">
-          <label for="inputPassword4">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputPassword4">Password</label>
-          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-2">
-          <label for="inputCity">City</label>
-          <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputState">State</label>
-          <select id="inputState" class="form-control">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputZip">Zip</label>
-          <input type="text" class="form-control" id="inputZip">
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
-  </div>
-</div>
+      </section>
 </body>
 </html>

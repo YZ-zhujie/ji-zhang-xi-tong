@@ -4,6 +4,7 @@ use app\common\model\Course;
 use app\common\model\Teacher;
 use think\Request;
 use app\common\model\KlassCourse;
+use app\index\controller;   
 
 class CourseController extends IndexController
 {

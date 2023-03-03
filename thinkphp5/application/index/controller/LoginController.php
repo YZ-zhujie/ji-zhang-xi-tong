@@ -4,7 +4,7 @@ use think\Controller;
 use think\Request;
 use app\common\model\User;
 class LoginController extends Controller{
-    public function index(){
+    public function index(){    
         return $this->fetch();
     }
     public function login(){

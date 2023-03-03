@@ -1,11 +1,8 @@
 <?php
 namespace app\index\controller;
-use app\index\controller\IndexController;
-
-class UserController extends IndexController{
+use think\Controller;
+class SystemController extends Controller{
     public function index(){
         return $this->fetch();
-        
     }
-
 }
