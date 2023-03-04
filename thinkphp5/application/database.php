@@ -19,9 +19,9 @@ return [
     // 用户名
     'username'       => 'root',
     // 密码
-    'password'       => '',
+    'password'       => '123qwe',
     // 端口
-    'hostport'       => '0',
+    'hostport'       => '3316',
     // 连接dsn
     'dsn'            => '',
     // 数据库连接参数
